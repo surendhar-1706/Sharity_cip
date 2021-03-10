@@ -1,0 +1,12 @@
+<h1>Login Page</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <input type='text' name='username' placeholder='Enter your username'><br><br>
+    <input type='password' name='password' placeholder='Enter password'>
+    <br><br>
+    <input type="submit" value='Let me in'>
+    <br><br>
+
+</form>
+{% for message in messages %} {{ message}} {% endfor %}

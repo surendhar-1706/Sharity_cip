@@ -1,0 +1,12 @@
+<h1>Profile Page</h1>
+{%load static%}
+{{user}}<br><br>
+{{user.profile.first_name}}<br><br>
+{{user.profile.last_name}}<br><br>{{user.profile.mobile_number}}<br><br>{{user.profile.public_id}}
+<br><br>{{user.profile.wallet}}<br><br>
+<img style="
+vertical-align: middle;
+width: 100px;
+height: 100px;
+border-radius: 50%;" src='{{user.profile.dp.url}}'><br><br>
+<a href="{% url 'updateprofile' %}"> updateprofile</a>

@@ -1,0 +1,17 @@
+<h2>Update profile page</h2>
+<form method="post">
+    {% csrf_token %}
+    {{form.first_name.label}}
+    {{form.first_name}}<br>
+    {{form.last_name.label}}
+    {{form.last_name}}<br>
+    {{form.mobile_number.label}}
+    {{form.mobile_number}}<br>
+
+    {{form.dp}}<br>
+    <input type='password' name='paypass1' placeholder='Enter payment password'>
+    <input type='password' name='paypass2' placeholder='Renter payment password'>
+    <input type="submit" />
+</form>
+{{form.errors}}
+{% for message in messages %} {{ message}} {% endfor %}

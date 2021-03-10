@@ -1,0 +1,18 @@
+<h1>Signup page</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.username.label }}
+    {{form.username}}
+    <br>
+    <br>
+    {{ form.password1.label }}
+    {{form.password1}}
+    <br>
+    <br>
+    {{form.password2.label}}
+    {{form.password2}}
+    <br>
+    <br>
+    <input type='submit' />
+</form>
+{{form.errors}}

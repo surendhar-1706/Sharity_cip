@@ -1,0 +1,12 @@
+<h1>Posts Page</h1>
+{% for post in posts %}
+<h4>{{ post.text_area }} by <a href="{% url 'viewprofile' user_name=post %}">{{ post.profile}}</a>
+</h4>
+<br><br>
+{% endfor %}
+{% if posts.has_previous%}
+<a href="{% url 'post'%}?page={{posts.previous_page_number}}">Previous Page</a>
+{% endif %}
+{% if posts.has_next%}
+<a href="{% url 'post'%}?page={{posts.next_page_number}}">Next Page</a>
+{% endif %}

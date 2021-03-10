@@ -1,0 +1,11 @@
+<h1>This page is created to display the profile of user who created a post</h1>
+{% for data in posted %}
+{{data.text_area}}<br><br>
+{% endfor%}
+{{profile.user}}
+<br><br>
+<h1>Payment Id: {{profile.public_id}}</h1>
+<h1>Account Balance:{{profile.wallet}}</h1>
+<a href="{% url 'makepayments' profile.user %}">Donate</a>
+<br><br>
+{% for message in messages %} {{ message}} {% endfor %}

@@ -1,0 +1,17 @@
+<h1>MakePayments page</h1>
+From:
+{{request.user}}<br>
+<br>Payment Id :{{request.user.profile.public_id}}
+<br><br>
+To: {{profile}}<br>
+<br>Payment Id :{{profile.public_id}}
+
+<br><br>
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type='text' placeholder='Enter password' name='paypass'>
+    <input type='submit'/>
+</form>
+
+{% for message in messages %} {{ message}} {% endfor %}

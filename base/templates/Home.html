@@ -1,0 +1,22 @@
+<h1>Home Page</h1>
+<h1>Welcome,{{user}}</h1>
+{% load static %}
+<h1></h1>
+{% if user.is_authenticated %}
+<img style="
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;" src="{{user.profile.dp.url}}" />
+<button><a href="{% url 'logout' %}">logout</a></button>
+{% else %}
+<img style="
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;" src="{% static '/images/anonymous2.png' %}" />
+
+{% endif %}
+
+<a href="{% url 'post'%}">Post page</a>
+<a href="{% url 'profile'%}">Profile page</a>
